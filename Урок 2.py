@@ -40,6 +40,7 @@ if number == 2:                                                             #ins
                 print(f'\nНовий список: {lst}')
         else:
             lst.insert(ind, elem)
+            print(f'\nНовий список: {lst}')
     else:
         print('Ви ввели неправильний тип елемента')
 
