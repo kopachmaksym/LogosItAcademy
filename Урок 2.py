@@ -21,6 +21,7 @@ if number == 1:                                                             #app
                 print(f'\nНовий список: {lst}')
         else:
             lst.append(elem)
+            print(f'\nНовий список: {lst}')
     else:
         print('Ви ввели неправильний тип елемента')
 
