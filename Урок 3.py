@@ -15,7 +15,7 @@ elif menu == 2:
         while var == 'так':
             print(f'\t\tЕлементи списка: {lst}')
             print(f'\n\t\tМетоди використання у списках:')
-            print('\t\t\t1)append\n\t\t\t2)insert\n\t\t\t3)remove\n\t\t\t4)index\n\t\t\t5)reverse\n\t\t\t6)clear\n\t\t\t7)count\n\t\t\t8)pop\n\t\t\t9)sort')
+            print('\t\t\t1)append\n\t\t\t2)insert\n\t\t\t3)remove\n\t\t\t4)index\n\t\t\t5)reverse\n\t\t\t6)clear\n\t\t\t7)count\n\t\t\t8)pop\n\t\t\t9)sort\n\t\t\t10)extend')
             number = int(input('\tВиберіть дію (потрібно ввести цифру): '))
 
             if number == 1:
@@ -115,8 +115,24 @@ elif menu == 2:
                 lst_for_str.clear()
                 print(f'\tНовий список: {lst}')
 
-            elif number not in range(1,9):
-                print ('\nНе вибрана дія (1-9)')
+            elif number == 10: # extend
+                new_lst = []
+                count = int(input('Введіть скільки елементів буде додано в список: '))
+
+                for i in range(count):
+                    type = input('\tЯкий тип елемента (стрічка / цифра): ')
+                    while type != 'цифра' and type != 'стрічка':
+                        type = input('\tНеправильно введений тип. Введіть тип елемента: ')
+                    elem = input('\tВведіть елемент: ')
+                    if type == 'цифра':
+                        elem = int(elem)
+                    new_lst.append(elem)
+                lst.extend(new_lst)
+                new_lst.clear() # Необов'язково
+                print(f'\tНовий список: {lst}')
+
+            elif number not in range(1,10):
+                print ('\nНе вибрана дія (1-10)')
 
             var = input('\nПродовжити роботу (так/ні): ')
             while True:
@@ -128,4 +144,3 @@ elif menu == 2:
         print('\n\t\tНеправильно введені дані')
 
 print ('\n\t\tЗавершення роботи.')
-
