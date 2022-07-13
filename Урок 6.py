@@ -1,4 +1,5 @@
 lst = []
+
 n = int(input('Введіть кількість елементів(для 1 і 2 завдання): '))
 for i in range(n):
     var = int(input('1)Цифра\n2)Стрічка\n\tВведіть цифру: '))
@@ -22,9 +23,11 @@ def func_2(*args): #3
     def maps(i):
         if type(i) == str:
             i = int(i)
+        if type(i) == list:
+            return
         return i
     st = list(map(maps,args))
     st = set(st[0:9])
     print(st)
 
-func_2(1,2,3,4,5,6,8,7,9,'10',11)
+func_2(1,[1],[3,5],'2')
